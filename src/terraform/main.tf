@@ -5,10 +5,15 @@ terraform {
       version = "3.53.0"
     }
   }
+
+backend "azurerm" {
+    resource_group_name = "friday-demo-rg"
+    strorage_account_name = "akhdcjjsjc"
+    container_name = "tfstate"
+    key = "dev.terraform.tfstate"
 }
 
-
-
+}
 
 provider "azurerm" {
   # Configuration options
