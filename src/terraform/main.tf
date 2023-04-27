@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "example" {
 
 resource "azurerm_storage_account" "example" {
   name                     = "storage3242345678"
-  resource_group_name      = "Resource_1"
+  resource_group_name      = "Resource_2"
   location                 = "Central India"
   account_tier             = "Standard"
   account_replication_type = "LRS"
