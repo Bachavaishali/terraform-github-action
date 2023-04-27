@@ -10,6 +10,9 @@ resource "azurerm_storage_account" "example" {
   location                 = "Central India"
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  depends_on = [
+    azurerm_resource_group.example
+  ]
 
 }
 
@@ -17,4 +20,7 @@ resource "azurerm_storage_container" "example" {
   name                  = "tfstate"
   storage_account_name  = "storage3242345678"
   container_access_type = "private"
+  depends_on = [
+    azurerm_storage_account.example
+  ]
 }
