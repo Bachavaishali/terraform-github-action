@@ -6,14 +6,13 @@ terraform {
     }
   }
 }
-
-
 backend "azurerm" {
     resource_group_name = "friday-demo-rg"
     strorage_account_name = "akhdcjjsjc"
     container_name = "tfstate"
     key = "dev.terraform.tfstate"
 }
+
 
 provider "azurerm" {
   # Configuration options
@@ -23,7 +22,6 @@ provider "azurerm" {
   #client_secret = var.client_secret
   features {}
 }
-
 resource "azurerm_resource_group" "example" {
   name     = "Resource_1"
   location = "Central India"
