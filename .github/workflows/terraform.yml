@@ -45,11 +45,7 @@ jobs:
    
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-<<<<<<< HEAD
-      run: terraform plan main.tf
-=======
       run: terraform plan 
->>>>>>> aacb3b68bd2c4bac93147bc828612f3ed62b4ea7
       working-directory: ${{env.ROOT_PATH}}
 
       
