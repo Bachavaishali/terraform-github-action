@@ -1,11 +1,10 @@
-name: 'tf deploy to azure'
+name: 'Terraform'
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
-  
-  
+
 permissions:
   contents: read
 
@@ -14,11 +13,11 @@ env:
     ARM_CLIENT_SECRET: ${{secrets.AZURE_CLIENT_SECRET}}
     ARM_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTION_ID}}
     ARM_TENENT_ID: ${{secrets.AZURE_TENENT_ID}}
-    ROOT_PATH='${{github.workspace}}/src/terraform'
+    ROOT_PATH: '../../src/terraform'
 
 jobs:
   terraform:
-    name: 'Terraform plan'
+    name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
 
@@ -41,12 +40,12 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
-       working-directory: ${{env.ROOT_PATH}}
+      working-directory: ${{env.ROOT_PATH}}
 
- 
+   
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan 
-       working-directory: ${{env.ROOT_PATH}}
+      run: terraform plan main.tf
+      working-directory: ${{env.ROOT_PATH}}
 
-     
+      
