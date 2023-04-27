@@ -14,7 +14,7 @@ env:
     ARM_CLIENT_SECRET: ${{secrets.AZURE_CLIENT_SECRET}}
     ARM_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTION_ID}}
     ARM_TENENT_ID: ${{secrets.AZURE_TENENT_ID}}
-    ROOT_PATH='${{github.workspace}}/src/terraform'
+    ROOT_PATH:'${{github.workspace}}/src/terraform'
 
 jobs:
   terraform:
