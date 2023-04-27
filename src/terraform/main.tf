@@ -15,6 +15,6 @@ resource "azurerm_storage_account" "example" {
 
 resource "azurerm_storage_container" "example" {
   name                  = "tfstate"
-  storage_account_name  = storage3242345678
+  storage_account_name  = "storage3242345678"
   container_access_type = "private"
 }
