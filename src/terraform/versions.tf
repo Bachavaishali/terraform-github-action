@@ -18,7 +18,3 @@ client_id = "50f0c2a9-3ed5-4c8e-97af-7100c39b6811"
 client_secret = var.client_secret
  features {}
 }
-resource "azurerm_resource_group" "example" {
-  name     = "Resource_2"
-  location = "Central India"
-}
